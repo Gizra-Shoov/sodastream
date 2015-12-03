@@ -64,9 +64,16 @@ describe('Visual monitor testing', function() {
       .webdrivercss(testName + '.homepage', {
         name: '1',
         exclude: [],
-        remove: [],
-        hide: [],
-        screenWidth: selectedCaps == 'chrome' ? [640, 960, 1200] : undefined,
+        remove:
+          [
+            '#block-sc_user_utils-0',
+            '#displayCounter-hp'
+          ],
+        hide:
+          [
+            '#edit-actions'
+          ],
+        screenWidth: selectedCaps == 'chrome' ? [1200] : undefined,
       }, resultsCallback)
       .call(done);
   });
